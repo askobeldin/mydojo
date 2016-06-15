@@ -1,0 +1,12 @@
+\mycode\mydojo
+
+    <DIR>    dojo-release-1.11.2
+    <DIR>    Include
+    <DIR>    Lib
+    <DIR>    Scripts
+    <DIR>    example_01
+             .gitignore
+             pip-selfcheck.json
+             pyvenv.cfg
+             README.md
+             requirements.txt
