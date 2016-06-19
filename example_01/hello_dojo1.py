@@ -26,7 +26,7 @@ DIJIT = os.path.abspath(os.path.join(DR, 'dijit'))
 # dojox dir
 DOJOX = os.path.abspath(os.path.join(DR, 'dojox'))
 # themes dir
-THEMES = os.path.abspath(os.path.join(DR, 'dojox'))
+THEMES = os.path.abspath(os.path.join(DR, 'themes'))
 
 
 
@@ -40,15 +40,48 @@ app = Bottle()
 def hello_dojo_1():
     return static_file('hellodojo1.html', HTML)
 
+@app.route('/djconfig1')
+def djconfig1():
+    return static_file('djconfig1.html', HTML)
+
+@app.route('/layout1')
+def layout1():
+    return static_file('layout1.html', HTML)
+
+
 # /dojo/<path>
 @app.route('/dojo/<filename:path>')
 def get_dojo(filename):
-    # print('filename is {}'.format(filename))
-    # print(os.path.abspath(os.path.join(DOJO, os.path.dirname(filename))))
     return static_file(os.path.basename(filename),
                        os.path.abspath(os.path.join(DOJO,
                                                     os.path.dirname(filename))))
 
+# /dijit/<path>
+@app.route('/dijit/<filename:path>')
+def get_dijit(filename):
+    return static_file(os.path.basename(filename),
+                       os.path.abspath(os.path.join(DIJIT,
+                                                    os.path.dirname(filename))))
+
+# /dojox/<path>
+@app.route('/dojox/<filename:path>')
+def get_dojox(filename):
+    return static_file(os.path.basename(filename),
+                       os.path.abspath(os.path.join(DOJOX,
+                                                    os.path.dirname(filename))))
+# /themes/<path>
+@app.route('/themes/<filename:path>')
+def get_themes(filename):
+    return static_file(os.path.basename(filename),
+                       os.path.abspath(os.path.join(THEMES,
+                                                    os.path.dirname(filename))))
+
+# /static/<path>
+@app.route('/static/<filename:path>')
+def get_static_file(filename):
+    return static_file(os.path.basename(filename),
+                       os.path.abspath(os.path.join(STATIC,
+                                                    os.path.dirname(filename))))
 # favicon.ico
 @app.route('/favicon.ico')
 def favicon():
