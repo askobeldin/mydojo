@@ -1,0 +1,16 @@
+#console{
+	margin-top: 2em;
+	border-top: 1px solid #333;
+	overflow: auto;
+	max-height: 200px;
+}
+
+#console div {
+	background: #eee;
+	padding: 5px 10px;
+	margin-top: 2px;
+}
+
+#console div span {
+    color: red;
+}

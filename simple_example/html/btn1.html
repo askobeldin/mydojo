@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple with button</title>
+        <link rel="stylesheet" href="/static/style.css" media="screen">
+        <script>
+            dojoConfig = {
+                async: true,
+                packages:[{
+                    name: "app",
+                    location: "/app"
+                }]
+            };
+        </script>
+        <script src="dojo/dojo.js"></script>
+        <script>
+            require([
+                    "app/counter", "app/logger",
+                    "dojo/on", "dojo/dom", "dojo/domReady!"], 
+                    function(counter, Logger, on, dom){
+                        var logger = new Logger();
+                        /*
+                        logger.log(counter.getValue());
+                        counter.increment();
+                        logger.log(counter.getValue());
+                        counter.decrement();
+                        logger.log(counter.getValue()); 
+                        */
+
+                        /* buttons */
+                        var mybutton = dom.byId("myButton"),
+                            mybutton2 = dom.byId("myButton2");
+                        on(mybutton, "click", function(evt) {
+                                counter.increment();
+                                logger.log(counter.getValue());
+                                });
+                        on(mybutton2, "click", function(evt) {
+                                counter.decrement();
+                                logger.log(counter.getValue());
+                                });
+
+                        });
+        </script>
+    </head>
+    <body>
+        <button id="myButton">Increment</button>
+        <button id="myButton2">Decrement</button>
+        <div id="console"></div>
+    </body>
+</html>
