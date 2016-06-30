@@ -15,24 +15,22 @@
         </script>
         <script src="dojo/dojo.js"></script>
         <script>
-            require([
-                    "app/counter", "app/logger"
-                ], function(counter, Logger){
-                    var logger = new Logger();
-                    logger.log(counter.getValue());
-                    counter.increment();
-                    logger.log(counter.getValue());
-                    counter.decrement();
-                    logger.log(counter.getValue()); 
+            require(["app/counter", "app/logger"],
+                    function(counter, Logger){
+                        var logger = new Logger();
+                        logger.log(counter.getValue());
+                        counter.increment();
+                        logger.log(counter.getValue());
+                        counter.decrement();
+                        logger.log(counter.getValue()); 
 
-                    counter.decrement();
-                    logger.log(counter.getValue()); 
-                    counter.decrement();
-                    logger.log(counter.getValue()); 
-                    counter.decrement();
-                    logger.log(counter.getValue()); 
-                    }
-                   );
+                        counter.decrement();
+                        logger.log(counter.getValue()); 
+                        counter.decrement();
+                        logger.log(counter.getValue()); 
+                        counter.decrement();
+                        logger.log(counter.getValue()); 
+                    });
         </script>
     </head>
     <body>

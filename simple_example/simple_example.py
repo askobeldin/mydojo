@@ -46,6 +46,11 @@ def simple_example():
 def simple_btn1():
     return static_file('btn1.html', HTML)
 
+@app.route('/counter2')
+def simple_counter2():
+    return static_file('counter2.html', HTML)
+
+# routing for `app` folder for Dojo application
 @app.route('/app/<filename:path>')
 def get_app(filename):
     return static_file(os.path.basename(filename),
