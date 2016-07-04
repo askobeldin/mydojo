@@ -24,6 +24,29 @@
                         setText(one, "One has been set");
                         setText("two", "Two has been set as well");
             });
+
+            require(["dojo/dom", "dojo/dom-construct", "dojo/domReady!"],
+                function(dom, domConstruct) {
+
+                    var list = dom.byId("list"),
+                        three = dom.byId("three");
+
+                    domConstruct.create("li", {
+                        innerHTML: "Six"
+                    }, list);
+
+                    domConstruct.create("li", {
+                        innerHTML: "Seven",
+                        className: "seven",
+                        style: {
+                            fontWeight: "bold"
+                        }
+                    }, list);
+
+                    domConstruct.create("li", {
+                        innerHTML: "Three and a half"
+                    }, three, "after");
+            });
         </script>
     </head>
     <body>

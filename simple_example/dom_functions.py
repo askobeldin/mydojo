@@ -42,6 +42,14 @@ app = Bottle()
 def dom1():
     return static_file('dom1.html', HTML)
 
+@app.route('/place')
+def place():
+    return static_file('place.html', HTML)
+
+@app.route('/destroy')
+def destroy():
+    return static_file('destroy.html', HTML)
+
 
 # routing for `app` folder for Dojo application
 @app.route('/app/<filename:path>')
