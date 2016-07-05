@@ -38,6 +38,7 @@ THEMES = os.path.abspath(os.path.join(DR, 'themes'))
 # Application
 app = Bottle()
 
+# try to mount in dom_functions.py
 @app.route('/')
 def simple_example():
     return static_file('index.html', HTML)

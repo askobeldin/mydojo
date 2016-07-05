@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Dom functions: place</title>
-        <link rel="stylesheet" href="/static/dom2.css" media="screen">
+        <!-- <link rel="stylesheet" href="static/dom2.css" media="screen"> -->
         <style>
             #three {
                 background:#e3e3e3;
@@ -41,7 +41,7 @@
                     "dojo/domReady!"], function(dom, domConstruct, on) {
                 function moveFirst(){
                     var list = dom.byId("list"),
-                            three = dom.byId("three");
+                        three = dom.byId("three");
 
                     domConstruct.place(three, list, "first");
                 }
