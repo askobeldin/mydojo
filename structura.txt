@@ -1,1 +1,4 @@
 here was a structura of this folder
+
+On windows: it is usefull - set DIRCMD=/OGEN
+

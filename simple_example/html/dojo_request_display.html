@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Introducing dojo/request: display file</title>
+        <link rel="stylesheet" href="static/dom2.css" media="screen">
+        <link rel="stylesheet" href="static/ajax.css" media="screen">
+    </head>
+    <body>
+        <h1>Demo: dojo/request/xhr</h1>
+		<p>Click the button below to see dojo/request/xhr in action.</p>
+		<div>
+			<button id="textButton">Request Text File</button>
+		</div>
+		<div id="resultDiv"></div>
+
+        <script>
+            dojoConfig = {
+                async: true,
+                packages:[{
+                    name: "app",
+                    location: "/app"
+                }]
+            };
+        </script>
+        <script src="dojo/dojo.js"></script>
+        <script>
+            require(["dojo/dom", "dojo/on", "dojo/request", "dojo/domReady!"],
+                function(dom, on, request){
+                    // Results will be displayed in resultDiv
+                    var resultDiv = dom.byId("resultDiv");
+                    // Attach the onclick event handler to the textButton
+                    on(dom.byId('textButton'), "click", function(evt){
+                        // Request the text file
+                        request.get("resources/display_file.txt").then(
+                            function(response){
+                                // Display the text file content
+                                resultDiv.innerHTML = "<pre>" + response + "</pre>";
+                            },
+                            function(error){
+                                // Display the error returned
+                                resultDiv.innerHTML = "<div class=\"error\">" + error + "<div>";
+                            }
+                        );
+                    });
+                }
+            );
+        </script>
+    </body>
+</html>
+

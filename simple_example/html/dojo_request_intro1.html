@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Introducing dojo/request</title>
+    </head>
+    <body>
+        <h1>See web dev console for log</h1>
+
+        <script>
+            dojoConfig = {
+                async: true,
+                packages:[{
+                    name: "app",
+                    location: "/app"
+                }]
+            };
+        </script>
+        <script src="dojo/dojo.js"></script>
+        <script>
+            require(["dojo/request"], function(request){
+                request("resources/helloworld.txt").then(
+                    function(text){
+                        console.log("The file's content is: " + text);
+                    },
+                    function(error){
+                        console.log("An error occurred: " + error);
+                    }
+                );
+            });
+        </script>
+    </body>
+</html>
+

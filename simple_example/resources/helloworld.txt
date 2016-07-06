@@ -1,0 +1,5 @@
+This is a file `Hello world` epta!
+
+А тут текст по-русски, охуенно!
+
+123 456 789 0
