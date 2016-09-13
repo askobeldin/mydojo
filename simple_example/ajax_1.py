@@ -43,7 +43,8 @@ pathways.resources = mkabspath(CURDIR, 'resources')
 
 
 # Dojo release directory
-pathways.dr = mkabspath('..', CURDIR, 'dojo-release-1.11.2')
+# pathways.dr = mkabspath('..', CURDIR, 'dojo-release-1.11.2')
+pathways.dr = mkabspath(CURDIR, '..', 'dojo-release-1.11.2')
 # dojo directory
 pathways.dojo = mkabspath(pathways.dr, 'dojo')
 # dijit directory
@@ -52,6 +53,8 @@ pathways.dijit = mkabspath(pathways.dr, 'dijit')
 pathways.dojox = mkabspath(pathways.dr, 'dojox')
 # Dojo themes directory
 pathways.themes = mkabspath(pathways.dr, 'themes')
+
+print(pathways)
 
 
 ##########################################################
