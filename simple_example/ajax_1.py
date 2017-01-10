@@ -25,7 +25,7 @@ def getstaticfile(root, path):
 
 def printinfo(ns):
     for k in vars(ns):
-        print('{:<10}{}'.format(k, getattr(ns, k)))
+        print('{:<16}{}'.format(k, getattr(ns, k)))
 
 
 pathways = types.SimpleNamespace()
@@ -54,7 +54,7 @@ pathways.dojox = mkabspath(pathways.dr, 'dojox')
 # Dojo themes directory
 pathways.themes = mkabspath(pathways.dr, 'themes')
 
-print(pathways)
+printinfo(pathways)
 
 
 ##########################################################
